@@ -1,5 +1,7 @@
 package de.neuefische;
 
+import de.neuefische.model.Order;
+import de.neuefische.model.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

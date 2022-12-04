@@ -1,17 +1,18 @@
 package de.neuefische;
 
+import de.neuefische.model.Product;
+import de.neuefische.repo.ProductRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 class ProductRepoTest {
     @Test
     void addProductToProductRepoWithIdAsKey() {
         //given
-        Map<Integer,Product> products= new HashMap<>();
+        Map<Integer, Product> products= new HashMap<>();
         //when
         ProductRepo productRepo= new ProductRepo(products);
         Map<Integer,Product>  actual =productRepo.add(new Product(1,"t-shirt"));
@@ -47,6 +48,5 @@ class ProductRepoTest {
         //then
         Assertions.assertEquals(new Product(2,"pants"),actual);
     }
-
 
 }

@@ -1,4 +1,4 @@
-package de.neuefische;
+package de.neuefische.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,4 +17,5 @@ public class Order {
         }
         return productIds;
     }
+
 }

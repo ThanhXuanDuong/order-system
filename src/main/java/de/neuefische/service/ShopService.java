@@ -1,5 +1,9 @@
-package de.neuefische;
+package de.neuefische.service;
 
+import de.neuefische.model.Order;
+import de.neuefische.model.Product;
+import de.neuefische.repo.OrderRepo;
+import de.neuefische.repo.ProductRepo;
 import lombok.Data;
 
 import java.util.*;
@@ -30,7 +34,7 @@ public class ShopService {
         return productRepo.list();
     }
 
-    public Map<Integer,Order> addOrder(Order newOrder) throws Exception {
+    public Map<Integer, Order> addOrder(Order newOrder) throws Exception {
         if (!containsNonExistedProduct(newOrder)) {
             return orderRepo.add(newOrder);
         }else {
@@ -57,6 +61,4 @@ public class ShopService {
         return false;
 
     }
-
-
 }

@@ -1,5 +1,10 @@
 package de.neuefische;
 
+import de.neuefische.model.Order;
+import de.neuefische.model.Product;
+import de.neuefische.repo.OrderRepo;
+import de.neuefische.repo.ProductRepo;
+import de.neuefische.service.ShopService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +19,7 @@ class ShopServiceTest {
 
     void getProductWithKeyId() {
         //given
-        Map<Integer,Product> products= new HashMap<>();
+        Map<Integer, Product> products= new HashMap<>();
         products.put(1,new Product(1,"t-shirt"));
         products.put(2,new Product(2,"pants"));
         //when
@@ -42,7 +47,7 @@ class ShopServiceTest {
     @Test
     void getOneOrderByKeyId() {
         //given
-        Map<Integer,Order> orders= new HashMap<>();
+        Map<Integer, Order> orders= new HashMap<>();
         orders.put(14,new Order(14,List.of(2,3)));
         orders.put(15,new Order(15,List.of(3,4)));
         //when

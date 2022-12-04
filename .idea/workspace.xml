@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/Main.java" afterDir="false" />
+    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="Init: 1.Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ProductRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ProductRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="branch-interface-and-assertj" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -62,7 +71,7 @@
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,7 +86,7 @@
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,7 +102,7 @@
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,7 +117,7 @@
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +132,7 @@
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,8 +162,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670010149030</updated>
-      <workItem from="1670010150348" duration="26581000" />
+      <workItem from="1670010150348" duration="34163000" />
     </task>
+    <task id="LOCAL-00001" summary="Init: 1.Commit">
+      <created>1670082432270</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670082432270</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,10 +182,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init: 1.Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init: 1.Commit" />
   </component>
 </project>

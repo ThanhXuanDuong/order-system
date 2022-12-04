@@ -1,5 +1,7 @@
 package de.neuefische;
 
+import de.neuefische.model.Order;
+import de.neuefische.repo.OrderRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +14,7 @@ class OrderRepoTest {
     @Test
     void addOrderToOrderRepoWithIdAsKey() {
         //given
-        Map<Integer,Order> orders= new HashMap<>();
+        Map<Integer, Order> orders= new HashMap<>();
         //when
         OrderRepo orderRepo= new OrderRepo(orders);
         Map<Integer,Order>  actual =orderRepo.add(
