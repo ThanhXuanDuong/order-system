@@ -6,6 +6,7 @@ import de.neuefische.repo.ProductRepo;
 import de.neuefische.service.ShopService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,9 +22,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Product actual =service.getProduct(2);
+        Product product =service.getProduct(2);
         //then
-        Assertions.assertEquals(productRepo.get(2),actual);
+        assertThat(product).isEqualTo(productRepo.get(2));
     }
     @Test
     void getProduct_WhenInvalidKeyId_returnNull() {
@@ -31,9 +32,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Product actual =service.getProduct(11);
+        Product product =service.getProduct(11);
         //then
-        Assertions.assertNull(actual);
+        assertThat(product).isNull();
     }
     @Test
     void listAllProducts() {
@@ -41,9 +42,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Map<Integer,Product> actual =service.listProducts();
+        Map<Integer,Product> allProducts =service.listProducts();
         //then
-        Assertions.assertEquals(productRepo.getProducts(),actual);
+        assertThat(allProducts).isEqualTo(productRepo.getProducts());
     }
 
     @Test
@@ -52,9 +53,9 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(new ProductRepo(),orderRepo);
-        Order  actual =service.getOrder(1);
+        Order  order =service.getOrder(1);
         //then
-        Assertions.assertEquals(orderRepo.get(1),actual);
+        assertThat(order).isEqualTo(orderRepo.get(1));
     }
 
     @Test
@@ -63,9 +64,9 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(new ProductRepo(),orderRepo);
-        Order  actual =service.getOrder(11);
+        Order  order =service.getOrder(11);
         //then
-        Assertions.assertNull(actual);
+        assertThat(order).isNull();
     }
 
     @Test
@@ -74,9 +75,9 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(new ProductRepo(),orderRepo);
-        Map<Integer,Order>  actual =service.listOrders();
+        Map<Integer,Order>  allOrders =service.listOrders();
         //then
-        Assertions.assertEquals(orderRepo.list(),actual);
+        assertThat(allOrders).isEqualTo(orderRepo.list());
     }
 
     @Test
@@ -86,9 +87,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        boolean actual =service.containsNonExistedProduct(newOrder);
+        boolean containInvalidProduct =service.containsNonExistedProduct(newOrder);
         //then
-        Assertions.assertTrue(actual);
+        assertThat(containInvalidProduct).isTrue();
     }
     @Test
     void returnFalseWhenNotContainNonExistedProduct(){
@@ -97,9 +98,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        boolean actual =service.containsNonExistedProduct(newOrder);
+        boolean containInvalidProduct =service.containsNonExistedProduct(newOrder);
         //then
-        Assertions.assertFalse(actual);
+        assertThat(containInvalidProduct).isFalse();
     }
 
     @Test
@@ -110,25 +111,22 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(productRepo,orderRepo);
+        Map<Integer,Order> newOrderRepo =service.addOrder(newOrder);
         //then
-        Map<Integer,Order> actual =service.addOrder(newOrder);
-        Assertions.assertEquals(orderRepo.getOrders(),actual);
+        assertThat(newOrderRepo).isEqualTo(orderRepo.list());
     }
 
     @Test
-    void throwExceptionWhenContainNonExistedProduct()  {
+    void throwExceptionWhenContainNonExistedProduct() {
         ///given
         Order newOrder =createNewOrderWith1ValidAnd1InValidProduct();
         ProductRepo productRepo= createProductRepoWith3Products();
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(productRepo,orderRepo);
-        try {
+        assertThatThrownBy(() -> {
             Map<Integer, Order> actual = service.addOrder(newOrder);
-            Assertions.fail();
-        } catch (Exception e) {
-            Assertions.assertEquals("Product doesn't exist!",e.getMessage());
-        }
+        }).hasMessage("Product doesn't exist!");
     }
 
 

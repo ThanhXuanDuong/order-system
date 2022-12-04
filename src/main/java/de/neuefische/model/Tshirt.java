@@ -10,11 +10,11 @@ public class Tshirt implements Product{
     private String name;
     @Override
     public int getId() {
-        return 0;
+        return id;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }

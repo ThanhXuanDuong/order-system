@@ -13,12 +13,12 @@ public class Order {
 
     public Order() {
     }
-/*
+
     public List<Integer> addProducts(List<Product> products){
         for (Product product:products) {
             productIds.add(product.getId());
         }
         return productIds;
     }
-*/
+
 }

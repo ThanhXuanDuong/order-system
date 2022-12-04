@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class OrderTest {
-/*
+
     @Test
     void returnOrderWhenAddProducts(){
         //given
@@ -22,5 +22,5 @@ class OrderTest {
         Assertions.assertEquals(new Order(14,List.of(1,2)),newOrder);
     }
 
- */
+
 }

@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
       <recent name="de.neuefische" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderTest.returnOrderWhenAddProducts">
+  <component name="RunManager" selected="JUnit.ShopServiceTest (1)">
     <configuration name="OrderTest.returnOrderWhenAddProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
@@ -96,33 +101,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopServiceTest.returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShopServiceTest.getProductWithValidKeyId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
-      <option name="METHOD_NAME" value="returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" />
+      <option name="PACKAGE_NAME" value="de.neuefische.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.service.ShopServiceTest" />
+      <option name="METHOD_NAME" value="getProductWithValidKeyId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShopServiceTest.throwExceptionWhenContainNonExistedProduct (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
-      <option name="METHOD_NAME" value="returnTrueWhenOrderContainsNonExistedProduct" />
+      <option name="PACKAGE_NAME" value="de.neuefische.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.service.ShopServiceTest" />
+      <option name="METHOD_NAME" value="throwExceptionWhenContainNonExistedProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderTest.returnOrderWhenAddProducts" />
         <item itemvalue="JUnit.ShopServiceTest (1)" />
+        <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct (1)" />
+        <item itemvalue="JUnit.ShopServiceTest.getProductWithValidKeyId" />
+        <item itemvalue="JUnit.OrderTest.returnOrderWhenAddProducts" />
         <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct" />
-        <item itemvalue="JUnit.ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" />
-        <item itemvalue="JUnit.ShopServiceTest.returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" />
       </list>
     </recent_temporary>
   </component>
