@@ -1,0 +1,58 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,15 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
++    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="add: branch with interface and assertj">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -190,7 +183,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1670161891059</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="add: branch with interface and assertj">
++      <created>1670165611918</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1670165611919</updated>
++    </task>
++    <task id="LOCAL-00005" summary="add: branch with interface and assertj">
++      <created>1670165656970</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1670165656970</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -223,6 +230,7 @@
+     <MESSAGE value="Init: 1.Commit" />
+     <MESSAGE value="refactoring" />
+     <MESSAGE value="fix: change class Product to interface" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix: change class Product to interface" />
++    <MESSAGE value="add: branch with interface and assertj" />
++    <option name="LAST_COMMIT_MESSAGE" value="add: branch with interface and assertj" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -25,7 +25,11 @@ public class ProductRepo {
         return products;
     }
     public Product get(int id){
-        return products.get(id);
+        if (products.get(id)!=null) {
+            return products.get(id);
+        } else {
+            throw new IndexOutOfBoundsException("Product not found!");
+        }
     }
 
 }

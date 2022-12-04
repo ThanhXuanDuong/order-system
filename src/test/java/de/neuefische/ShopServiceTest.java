@@ -27,14 +27,14 @@ class ShopServiceTest {
         Assertions.assertEquals(new Product(1,"t-shirt"),actual);
     }
     @Test
-    void getProduct_WhenInvalidKeyId_returnNull() {
+    void getProductWhenInvalidKeyId_throwException() {
         //given
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Product actual =service.getProduct(11);
         //then
-        Assertions.assertNull(actual);
+        IndexOutOfBoundsException thrown=Assertions.assertThrows(IndexOutOfBoundsException.class,()-> service.getProduct(11));
+        Assertions.assertEquals("Product not found!",thrown.getMessage());
     }
     @Test
     void listAllProducts() {
@@ -59,14 +59,14 @@ class ShopServiceTest {
     }
 
     @Test
-    void getOrderByInValidKeyId_returnNull() {
+    void getOrderByInValidKeyId_throwException() {
         //given
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(new ProductRepo(),orderRepo);
-        Order  actual =service.getOrder(11);
         //then
-        Assertions.assertNull(actual);
+        IndexOutOfBoundsException thrown=Assertions.assertThrows(IndexOutOfBoundsException.class,()->service.getOrder(11));
+        Assertions.assertEquals("Order not found!",thrown.getMessage());
     }
 
     @Test
@@ -124,12 +124,10 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(productRepo,orderRepo);
-        try {
-            Map<Integer, Order> actual = service.addOrder(newOrder);
-            Assertions.fail();
-        } catch (Exception e) {
-            Assertions.assertEquals("Product doesn't exist!",e.getMessage());
-        }
+        //then
+        Exception thrown=Assertions.assertThrows(Exception.class,()->service.addOrder(newOrder));
+        Assertions.assertEquals("Order contains non existed product!",thrown.getMessage());
+
     }
 
 

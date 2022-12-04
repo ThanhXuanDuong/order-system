@@ -1,7 +1,9 @@
 package de.neuefische;
 
 import de.neuefische.model.Order;
+import de.neuefische.model.Product;
 import de.neuefische.repo.OrderRepo;
+import de.neuefische.repo.ProductRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -53,5 +55,17 @@ class OrderRepoTest {
         Assertions.assertEquals(new Order(15,List.of(1,3)),actual);
     }
 
+    @Test
+    void throwExceptionWhenInValidKeyId() {
+        //given
+        Map<Integer,Order> orders= new HashMap<>();
+        orders.put(14,new Order(14,List.of(1,2)));
+        orders.put(15,new Order(15,List.of(1,3)));
+        //when
+        OrderRepo orderRepo= new OrderRepo(orders);
+        //then
+        IndexOutOfBoundsException thrown=Assertions.assertThrows(IndexOutOfBoundsException.class,()-> orderRepo.get(20));
+        Assertions.assertEquals("Order not found!",thrown.getMessage());
+    }
 
 }
