@@ -30,7 +30,7 @@ public class ShopService {
         if (!containsNonExistedProduct(newOrder)) {
             return orderRepo.add(newOrder);
         }else {
-            throw new Exception("Product doesn't exist!");
+            throw new Exception("Order contains non existed product!");
         }
     }
 

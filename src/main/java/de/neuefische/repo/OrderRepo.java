@@ -26,7 +26,11 @@ public class OrderRepo {
     }
 
     public Order get(int id){
-        return orders.get(id);
+        if (orders.get(id)!=null) {
+            return orders.get(id);
+        } else {
+            throw new IndexOutOfBoundsException("Order not found!");
+        }
     }
 
 }

@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Pants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Socks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Tshirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/OrderRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/OrderRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/ProductRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/ProductRepoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,19 +68,33 @@
       <recent name="de.neuefische" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ShopServiceTest (1)">
-    <configuration name="OrderTest.returnOrderWhenAddProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProductRepoTest">
+    <configuration name="OrderRepoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.model.*" />
+          <option name="PATTERN" value="de.neuefische.repo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.model" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.model.OrderTest" />
-      <option name="METHOD_NAME" value="returnOrderWhenAddProducts" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="de.neuefische.repo" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.repo.OrderRepoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductRepoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.repo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.repo" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.repo.ProductRepoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,29 +146,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopServiceTest.throwExceptionWhenContainNonExistedProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
-      <option name="METHOD_NAME" value="throwExceptionWhenContainNonExistedProduct" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductRepoTest" />
+        <item itemvalue="JUnit.OrderRepoTest" />
         <item itemvalue="JUnit.ShopServiceTest (1)" />
         <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct (1)" />
         <item itemvalue="JUnit.ShopServiceTest.getProductWithValidKeyId" />
-        <item itemvalue="JUnit.OrderTest.returnOrderWhenAddProducts" />
-        <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct" />
       </list>
     </recent_temporary>
   </component>

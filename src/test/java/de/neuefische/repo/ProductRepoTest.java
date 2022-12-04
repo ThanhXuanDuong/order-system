@@ -51,4 +51,18 @@ class ProductRepoTest {
         Assertions.assertEquals(new Pants(2,"pants neon"),actual);
     }
 
+    @Test
+    void throwExceptionWhenInValidKeyId() {
+        //given
+        Map<Integer,Product> products= new HashMap<>();
+        products.put(1,new Tshirt(1,"t-shirt bluebird"));
+        products.put(2,new Pants(2,"pants neon"));
+        //when
+        ProductRepo productRepo= new ProductRepo(products);
+        //then
+        IndexOutOfBoundsException thrown=Assertions.assertThrows(IndexOutOfBoundsException.class,()-> productRepo.get(3));
+        Assertions.assertEquals("Product not found!",thrown.getMessage());
+    }
+
+
 }

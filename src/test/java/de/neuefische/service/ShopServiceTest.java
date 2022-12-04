@@ -27,14 +27,14 @@ class ShopServiceTest {
         assertThat(product).isEqualTo(productRepo.get(2));
     }
     @Test
-    void getProduct_WhenInvalidKeyId_returnNull() {
+    void getProduct_WhenInvalidKeyId_throwException() {
         //given
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Product product =service.getProduct(11);
         //then
-        assertThat(product).isNull();
+        assertThatThrownBy(() -> {service.getProduct(11);
+        }).isInstanceOf(IndexOutOfBoundsException.class).hasMessage("Product not found!");
     }
     @Test
     void listAllProducts() {
@@ -59,14 +59,14 @@ class ShopServiceTest {
     }
 
     @Test
-    void getOrderByInValidKeyId_returnNull() {
+    void getOrderByInValidKeyId_throwException() {
         //given
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(new ProductRepo(),orderRepo);
-        Order  order =service.getOrder(11);
         //then
-        assertThat(order).isNull();
+        assertThatThrownBy(() -> {service.getOrder(11);
+        }).isInstanceOf(IndexOutOfBoundsException.class).hasMessage("Order not found!");
     }
 
     @Test
@@ -124,9 +124,8 @@ class ShopServiceTest {
         OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
         ShopService service= new ShopService(productRepo,orderRepo);
-        assertThatThrownBy(() -> {
-            Map<Integer, Order> actual = service.addOrder(newOrder);
-        }).hasMessage("Product doesn't exist!");
+        assertThatThrownBy(() -> {service.addOrder(newOrder);
+        }).isInstanceOf(Exception.class).hasMessage("Order contains non existed product!");
     }
 
 
