@@ -17,7 +17,7 @@ Aufgabe - Bonus
 - Nutze anstelle einer Product Klasse ein Interface und implementiere verschiedene Ausführungen
 - Schaue dir assertj an und nutze die assertj matchers in deinen Tests
 
-
+(Bonus Aufgabe in Branch)
 ![alt text](https://github.com/ThanhXuanDuong/order-system/blob/master/Diagramm.png)
 
 
