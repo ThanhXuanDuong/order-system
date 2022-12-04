@@ -8,6 +8,7 @@ import de.neuefische.service.ShopService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,78 +17,76 @@ import java.util.Map;
 class ShopServiceTest {
 
     @Test
-
-    void getProductWithKeyId() {
+    void getProductWithValidKeyId() {
         //given
-        Map<Integer, Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        ProductRepo productRepo= createProductRepoWith3Products();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        ShopService service= new ShopService(productRepo);
+        ShopService service= new ShopService(productRepo,new OrderRepo());
         Product actual =service.getProduct(1);
         //then
         Assertions.assertEquals(new Product(1,"t-shirt"),actual);
     }
     @Test
+    void getProduct_WhenInvalidKeyId_returnNull() {
+        //given
+        ProductRepo productRepo= createProductRepoWith3Products();
+        //when
+        ShopService service= new ShopService(productRepo,new OrderRepo());
+        Product actual =service.getProduct(11);
+        //then
+        Assertions.assertNull(actual);
+    }
+    @Test
     void listAllProducts() {
         //given
-        Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        ProductRepo productRepo= createProductRepoWith3Products();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        ShopService service= new ShopService(productRepo);
+        ShopService service= new ShopService(productRepo,new OrderRepo());
         Map<Integer,Product> actual =service.listProducts();
         //then
-        Assertions.assertEquals(products,actual);
+        Assertions.assertEquals(productRepo.getProducts(),actual);
     }
 
+    @Test
+    void getOneOrderByValidKeyId() {
+        //given
+        OrderRepo orderRepo= createOrderRepoWith2Orders();
+        //when
+        ShopService service= new ShopService(new ProductRepo(),orderRepo);
+        Order  actual =service.getOrder(1);
+        //then
+        Assertions.assertEquals(orderRepo.get(1),actual);
+    }
 
     @Test
-    void getOneOrderByKeyId() {
+    void getOrderByInValidKeyId_returnNull() {
         //given
-        Map<Integer, Order> orders= new HashMap<>();
-        orders.put(14,new Order(14,List.of(2,3)));
-        orders.put(15,new Order(15,List.of(3,4)));
+        OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
-        OrderRepo orderRepo= new OrderRepo(orders);
-        ShopService service= new ShopService(orderRepo);
-        Order  actual =service.getOrder(15);
+        ShopService service= new ShopService(new ProductRepo(),orderRepo);
+        Order  actual =service.getOrder(11);
         //then
-        Assertions.assertEquals(new Order(15,List.of(3,4)),actual);
-
+        Assertions.assertNull(actual);
     }
 
     @Test
     void listAllOrders() {
         //given
-        Map<Integer,Order> orders= new HashMap<>();
-        orders.put(14,new Order(14,List.of(2,3)));
-        orders.put(15,new Order(15,List.of(3,4)));
+        OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
-        OrderRepo orderRepo= new OrderRepo(orders);
-        ShopService service= new ShopService(orderRepo);
+        ShopService service= new ShopService(new ProductRepo(),orderRepo);
         Map<Integer,Order>  actual =service.listOrders();
         //then
-        Assertions.assertEquals(Map.of(
-                14,new Order(14,List.of(2,3)),
-                15,new Order(15,List.of(3,4))
-        ),actual);
+        Assertions.assertEquals(orderRepo.list(),actual);
     }
 
     @Test
-    void returnTrueWhenContainsNonExistedProduct(){
+    void returnTrueWhenOrderContainsNonExistedProduct(){
         //given
-        //given
-        Order newOrder =new Order(14,List.of(1,3));
-
-        Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        Order newOrder =createNewOrderWith1ValidAnd1InValidProduct();
+        ProductRepo productRepo= createProductRepoWith3Products();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        ShopService service= new ShopService(productRepo);
+        ShopService service= new ShopService(productRepo,new OrderRepo());
         boolean actual =service.containsNonExistedProduct(newOrder);
         //then
         Assertions.assertTrue(actual);
@@ -95,66 +94,75 @@ class ShopServiceTest {
     @Test
     void returnFalseWhenNotContainNonExistedProduct(){
         //given
-        Order newOrder =new Order(14,List.of(1,2));
-
-        Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        Order newOrder =createNewOrderWith2ValidProducts();
+        ProductRepo productRepo= createProductRepoWith3Products();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        ShopService service= new ShopService(productRepo);
+        ShopService service= new ShopService(productRepo,new OrderRepo());
         boolean actual =service.containsNonExistedProduct(newOrder);
         //then
         Assertions.assertFalse(actual);
     }
 
-
-
     @Test
-    void returnNewOrderRepoWhenNotContainNonExistedProductAndAddOrderToOrderRepo() throws Exception {
-        //given
-        Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
-        products.put(3, new Product(3,"socks"));
-
-        Map<Integer,Order> orders= new HashMap<>();
-        orders.put(14,new Order(14,List.of(1,2)));
-        Order newOrder =new Order(15,List.of(2,3));
-
+    void returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo() throws Exception {
+        ///given
+        Order newOrder =createNewOrderWith2ValidProducts();
+        ProductRepo productRepo= createProductRepoWith3Products();
+        OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        OrderRepo orderRepo= new OrderRepo(orders);
         ShopService service= new ShopService(productRepo,orderRepo);
-
+        //then
         Map<Integer,Order> actual =service.addOrder(newOrder);
-        Assertions.assertEquals(Map.of(
-                14, new Order(14,List.of(1,2)),
-                15,new Order(15,List.of(2,3))),actual);
+        Assertions.assertEquals(orderRepo.getOrders(),actual);
     }
 
     @Test
     void throwExceptionWhenContainNonExistedProduct()  {
-        //given
-        Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
-        products.put(3, new Product(3,"socks"));
-
-        Map<Integer,Order> orders= new HashMap<>();
-        orders.put(14,new Order(14,List.of(1,2)));
-        Order newOrder =new Order(15,List.of(2,7));
-
+        ///given
+        Order newOrder =createNewOrderWith1ValidAnd1InValidProduct();
+        ProductRepo productRepo= createProductRepoWith3Products();
+        OrderRepo orderRepo= createOrderRepoWith2Orders();
         //when
-        ProductRepo productRepo= new ProductRepo(products);
-        OrderRepo orderRepo= new OrderRepo(orders);
         ShopService service= new ShopService(productRepo,orderRepo);
-
         try {
             Map<Integer, Order> actual = service.addOrder(newOrder);
+            Assertions.fail();
         } catch (Exception e) {
             Assertions.assertEquals("Product doesn't exist!",e.getMessage());
         }
     }
 
+
+    //helper
+    public ProductRepo createProductRepoWith3Products(){
+        Map<Integer,Product> products= new HashMap<>();
+        ProductRepo productRepo= new ProductRepo(products);
+        productRepo.add(new Product(1,"t-shirt"));
+        productRepo.add(new Product(2,"pants"));
+        productRepo.add(new Product(3,"socks"));
+        return productRepo;
+    }
+
+    public OrderRepo createOrderRepoWith2Orders(){
+        Map<Integer,Order> orders= new HashMap<>();
+        OrderRepo orderRepo= new OrderRepo(orders);
+        orderRepo.add(new Order(1,List.of(1,2)));
+        orderRepo.add(new Order(2,List.of(2,3)));
+        return orderRepo;
+    }
+
+    public Order createNewOrderWith2ValidProducts(){
+        Order newOrder= new Order(14,new ArrayList<>());
+        newOrder.addProducts(List.of(new Product(1,"t-shirt"),
+                                    new Product(3,"socks")));
+        return newOrder;
+    }
+
+    public Order createNewOrderWith1ValidAnd1InValidProduct(){
+        Product product1 =new Product(1, "t-shirt");
+        Product product2 =new Product(6, "hat");
+        Order newOrder= new Order(14,new ArrayList<>());
+        newOrder.addProducts(List.of(product1,product2));
+        return newOrder;
+    }
 }

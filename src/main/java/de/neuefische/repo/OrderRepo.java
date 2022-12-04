@@ -9,6 +9,9 @@ import java.util.Map;
 public class OrderRepo {
     private Map<Integer, Order> orders;
 
+    public OrderRepo() {
+    }
+
     public OrderRepo(Map<Integer, Order> orders) {
         this.orders = orders;
     }

@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="Init: 1.Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ProductRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ProductRepoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,57 +65,11 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ShopServiceTest">
-    <configuration name="OrderRepoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.repo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.OrderRepoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderTest.returnProductIdsWhenAddProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.repo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.OrderTest" />
-      <option name="METHOD_NAME" value="returnProductIdsWhenAddProduct" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductRepoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.repo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.ProductRepoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShopServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.repo.*" />
+          <option name="PATTERN" value="de.neuefische.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,11 +80,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShopServiceTest.returnFalseWhenNotContainNonExistedProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
+      <option name="METHOD_NAME" value="returnFalseWhenNotContainNonExistedProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopServiceTest.returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
+      <option name="METHOD_NAME" value="returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
+      <option name="METHOD_NAME" value="returnTrueWhenOrderContainsNonExistedProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShopServiceTest.throwExceptionWhenContainNonExistedProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.repo.*" />
+          <option name="PATTERN" value="de.neuefische.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ShopServiceTest" />
-        <item itemvalue="JUnit.ProductRepoTest" />
-        <item itemvalue="JUnit.OrderRepoTest" />
-        <item itemvalue="JUnit.OrderTest.returnProductIdsWhenAddProduct" />
         <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct" />
+        <item itemvalue="JUnit.ShopServiceTest.returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" />
+        <item itemvalue="JUnit.ShopServiceTest.returnFalseWhenNotContainNonExistedProduct" />
+        <item itemvalue="JUnit.ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670010149030</updated>
-      <workItem from="1670010150348" duration="34163000" />
+      <workItem from="1670010150348" duration="42334000" />
     </task>
     <task id="LOCAL-00001" summary="Init: 1.Commit">
       <created>1670082432270</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670082432270</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring">
+      <created>1670145333222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670145333222</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +195,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -202,6 +209,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init: 1.Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init: 1.Commit" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>

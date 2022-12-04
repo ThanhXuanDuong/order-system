@@ -9,6 +9,9 @@ import java.util.Map;
 public class ProductRepo {
     private Map<Integer, Product> products;
 
+    public ProductRepo() {
+    }
+
     public ProductRepo(Map<Integer,Product> products) {
         this.products = products;
     }

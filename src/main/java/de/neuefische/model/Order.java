@@ -11,7 +11,10 @@ public class Order {
     private int id;
     private List<Integer> productIds;
 
-    public List<Integer> addProduct(List<Product> products){
+    public Order() {
+    }
+
+    public List<Integer> addProducts(List<Product> products){
         for (Product product:products) {
             productIds.add(product.getId());
         }
