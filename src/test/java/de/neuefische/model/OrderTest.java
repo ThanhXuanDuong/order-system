@@ -1,4 +1,4 @@
-package de.neuefische;
+package de.neuefische.model;
 
 import de.neuefische.model.Order;
 import de.neuefische.model.Product;
@@ -13,8 +13,8 @@ class OrderTest {
     @Test
     void returnOrderWhenAddProducts(){
         //given
-        Product product1 =new Product(1, "t-shirt");
-        Product product2 =new Product(2, "pants");
+        Product product1 =new Tshirt(1, "t-shirt");
+        Product product2 =new Pants(2, "pants");
         //when
         Order newOrder= new Order(14,new ArrayList<>());
         newOrder.addProducts(List.of(product1,product2));

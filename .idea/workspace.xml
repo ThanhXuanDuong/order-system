@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/OrderRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/model/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ProductRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/repo/ProductRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/service/ShopServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="branch-interface-and-assertj" />
+        <entry key="$PROJECT_DIR$" value="branch_interface" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,35 +44,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.neuefische.service" />
+      <recent name="de.neuefische.repo" />
+      <recent name="de.neuefische.model" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="de.neuefische" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ShopServiceTest">
-    <configuration name="ShopServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ShopServiceTest (1)">
+    <configuration name="ShopServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.*" />
+          <option name="PATTERN" value="de.neuefische.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.ShopServiceTest" />
+      <option name="PACKAGE_NAME" value="de.neuefische.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.service.ShopServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ShopServiceTest" />
+        <item itemvalue="JUnit.ShopServiceTest (1)" />
         <item itemvalue="JUnit.ShopServiceTest.throwExceptionWhenContainNonExistedProduct" />
+        <item itemvalue="JUnit.ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" />
         <item itemvalue="JUnit.ShopServiceTest.returnNewOrderRepoWhenContainValidProductsAndAddOrderToOrderRepo" />
         <item itemvalue="JUnit.ShopServiceTest.returnFalseWhenNotContainNonExistedProduct" />
-        <item itemvalue="JUnit.ShopServiceTest.returnTrueWhenOrderContainsNonExistedProduct" />
       </list>
     </recent_temporary>
   </component>

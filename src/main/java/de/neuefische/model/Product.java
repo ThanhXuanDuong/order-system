@@ -1,11 +1,6 @@
 package de.neuefische.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-@Data
-@AllArgsConstructor
-public class Product {
-     private int id;
-     private String name;
+public interface Product {
+     int getId();
+     String getName();
 }

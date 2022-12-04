@@ -1,7 +1,6 @@
-package de.neuefische;
+package de.neuefische.service;
 
-import de.neuefische.model.Order;
-import de.neuefische.model.Product;
+import de.neuefische.model.*;
 import de.neuefische.repo.OrderRepo;
 import de.neuefische.repo.ProductRepo;
 import de.neuefische.service.ShopService;
@@ -22,9 +21,9 @@ class ShopServiceTest {
         ProductRepo productRepo= createProductRepoWith3Products();
         //when
         ShopService service= new ShopService(productRepo,new OrderRepo());
-        Product actual =service.getProduct(1);
+        Product actual =service.getProduct(2);
         //then
-        Assertions.assertEquals(new Product(1,"t-shirt"),actual);
+        Assertions.assertEquals(productRepo.get(2),actual);
     }
     @Test
     void getProduct_WhenInvalidKeyId_returnNull() {
@@ -137,9 +136,9 @@ class ShopServiceTest {
     public ProductRepo createProductRepoWith3Products(){
         Map<Integer,Product> products= new HashMap<>();
         ProductRepo productRepo= new ProductRepo(products);
-        productRepo.add(new Product(1,"t-shirt"));
-        productRepo.add(new Product(2,"pants"));
-        productRepo.add(new Product(3,"socks"));
+        productRepo.add(new Tshirt(1,"t-shirt bluebird"));
+        productRepo.add(new Pants(2,"pants neon"));
+        productRepo.add(new Socks(3,"socks black and white"));
         return productRepo;
     }
 
@@ -153,14 +152,15 @@ class ShopServiceTest {
 
     public Order createNewOrderWith2ValidProducts(){
         Order newOrder= new Order(14,new ArrayList<>());
-        newOrder.addProducts(List.of(new Product(1,"t-shirt"),
-                                    new Product(3,"socks")));
+        newOrder.addProducts(List.of(
+                new Tshirt(1,"t-shirt bluebird"),
+                new Socks(3,"socks black and white")));
         return newOrder;
     }
 
     public Order createNewOrderWith1ValidAnd1InValidProduct(){
-        Product product1 =new Product(1, "t-shirt");
-        Product product2 =new Product(6, "hat");
+        Product product1 =new Tshirt(1,"t-shirt bluebird");
+        Product product2 =new Pants(6,"pants flower");
         Order newOrder= new Order(14,new ArrayList<>());
         newOrder.addProducts(List.of(product1,product2));
         return newOrder;

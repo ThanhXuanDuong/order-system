@@ -1,0 +1,60 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,15 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="refactoring">
++    <list default="true" id="8bf1a4e2-4dc9-4120-a7e7-f10cfe4cd6cc" name="Changes" comment="modify and add more tests">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Order.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/model/Product.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/OrderRepo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/repo/ProductRepo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/neuefische/service/ShopService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/OrderTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/neuefische/ShopServiceTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -162,7 +155,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1670010149030</updated>
+-      <workItem from="1670010150348" duration="42334000" />
++      <workItem from="1670010150348" duration="44353000" />
+     </task>
+     <task id="LOCAL-00001" summary="Init: 1.Commit">
+       <created>1670082432270</created>
+@@ -178,7 +171,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1670145333222</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="modify and add more tests">
++      <created>1670154958495</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1670154958495</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -210,6 +210,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Init: 1.Commit" />
+     <MESSAGE value="refactoring" />
+-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
++    <MESSAGE value="modify and add more tests" />
++    <option name="LAST_COMMIT_MESSAGE" value="modify and add more tests" />
+   </component>
+ </project>
+\ No newline at end of file

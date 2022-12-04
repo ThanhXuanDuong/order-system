@@ -1,6 +1,8 @@
-package de.neuefische;
+package de.neuefische.repo;
 
+import de.neuefische.model.Pants;
 import de.neuefische.model.Product;
+import de.neuefische.model.Tshirt;
 import de.neuefische.repo.ProductRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,38 +17,38 @@ class ProductRepoTest {
         Map<Integer, Product> products= new HashMap<>();
         //when
         ProductRepo productRepo= new ProductRepo(products);
-        Map<Integer,Product>  actual =productRepo.add(new Product(1,"t-shirt"));
+        Map<Integer,Product>  actual =productRepo.add(new Tshirt(1,"t-shirt bluebird"));
         //then
-        Assertions.assertEquals(Map.of(1,new Product(1,"t-shirt")),actual);
+        Assertions.assertEquals(Map.of(1,new Tshirt(1,"t-shirt bluebird")),actual);
     }
     @Test
     void listAllProducts() {
         //given
         Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        products.put(1,new Tshirt(1,"t-shirt bluebird"));
+        products.put(2,new Pants(2,"pants neon"));
         //when
 
         ProductRepo productRepo= new ProductRepo(products);
         Map<Integer,Product>  actual =productRepo.list();
         //then
         Assertions.assertEquals(Map.of(
-                1,new Product(1,"t-shirt"),
-                2,new Product(2,"pants")),actual);
+                1,new Tshirt(1,"t-shirt bluebird"),
+                2,new Pants(2,"pants neon")),actual);
     }
 
     @Test
     void getOneProductByKeyId() {
         //given
         Map<Integer,Product> products= new HashMap<>();
-        products.put(1,new Product(1,"t-shirt"));
-        products.put(2,new Product(2,"pants"));
+        products.put(1,new Tshirt(1,"t-shirt bluebird"));
+        products.put(2,new Pants(2,"pants neon"));
         //when
 
         ProductRepo productRepo= new ProductRepo(products);
         Product actual =productRepo.get(2);
         //then
-        Assertions.assertEquals(new Product(2,"pants"),actual);
+        Assertions.assertEquals(new Pants(2,"pants neon"),actual);
     }
 
 }

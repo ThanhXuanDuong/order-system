@@ -1,4 +1,4 @@
-package de.neuefische;
+package de.neuefische.repo;
 
 import de.neuefische.model.Order;
 import de.neuefische.repo.OrderRepo;
